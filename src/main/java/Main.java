@@ -3,39 +3,64 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        //Collections
-        CollectionsTask Col = new CollectionsTask();
+        System.out.println("enter 1 to task 1;\n enter 2 to task 2;\n enter 3 to task 3;\n enter any to exit;");
+        int Select = scanner.nextInt();
+        switch (Select){
+            case 1:
+                //Collections
+                CollectionsTask Col = new CollectionsTask();
 
-        //array
-        System.out.println("Array: "+Arrays.toString(Col.A));
-        //list
-        Col.B = Col.ListFromArray(Col.A);
-        System.out.println("List from array: "+Col.B);
-        //sort up
-        Col.SortUp(Col.B);
-        System.out.println("Sorted up list: "+Col.B);
-        //sort down
-        Col.SortDown(Col.B);
-        System.out.println("Sorted down list: "+Col.B);
-        //shuffle
-        Col.Shuffle(Col.B);
-        System.out.println("shuffled list: "+Col.B);
-        //right 1
-        Col.RightOne(Col.B);
-        System.out.println("Moved list: "+Col.B);
-        //unique
-        System.out.println("Unique list: "+Col.UnicueList(Col.B));
-        //non unique
-        System.out.println("Not unique list: "+Col.NonUnicueList(Col.B));
-        //list to array
-        System.out.println("Array from list: "+ Arrays.toString(Col.ListToArray(Col.B)));
-        //Count
-        System.out.println("Count numbers: "+Col.Counter(Col.ListToArray(Col.B)));
+                //array
+                System.out.println("Array: "+Arrays.toString(Col.A));
+                //list
+                Col.B = Col.ListFromArray(Col.A);
+                System.out.println("List from array: "+Col.B);
+                //sort up
+                Col.SortUp(Col.B);
+                System.out.println("Sorted up list: "+Col.B);
+                //sort down
+                Col.SortDown(Col.B);
+                System.out.println("Sorted down list: "+Col.B);
+                //shuffle
+                Col.Shuffle(Col.B);
+                System.out.println("shuffled list: "+Col.B);
+                //right 1
+                Col.RightOne(Col.B);
+                System.out.println("Moved list: "+Col.B);
+                //unique
+                System.out.println("Unique list: "+Col.UnicueList(Col.B));
+                //non unique
+                System.out.println("Not unique list: "+Col.NonUnicueList(Col.B));
+                //list to array
+                System.out.println("Array from list: "+ Arrays.toString(Col.ListToArray(Col.B)));
+                //Count
+                System.out.println("Count numbers: "+Col.Counter(Col.ListToArray(Col.B)));
+
+                break;
+            case 2:
+
+                break;
+            case 3:
+                System.out.println("press 1 to task 1;\n press 2 to task 2;\n press 3 to task 3;\n press any key to exit;");
+                break;
+            default:
+                System.out.println("Exit.");
+                break;
+        }
+
+
+
+
 
         //Primes
         PrimesGenerator P = new PrimesGenerator();
         System.out.println("First n primes: "+ P.getFirstPrimes(100));
+
+        PrimesGeneratorTest Test = new PrimesGeneratorTest();
+        System.out.println("Test for PrimesGenerator");
+        Test.ShowPrimes(P.getFirstPrimes(100));
 
     }
 }
@@ -155,10 +180,18 @@ class PrimesGenerator {
 }
 
 class PrimesGeneratorTest{
-    PrimesGenerator prim = new PrimesGenerator();
-    List<Integer> A = prim.getFirstPrimes(100);
 
     void ShowPrimes(List<Integer> A){
+        Iterator iterator = A.iterator();
+        System.out.println("Normal: ");
+        while (iterator.hasNext()){
+            System.out.print(" "+iterator.next());
+        }
 
+        iterator = A.reversed().iterator();
+        System.out.println("\nReversed: ");
+        while (iterator.hasNext()){
+            System.out.print(" "+iterator.next());
+        }
     }
 }
