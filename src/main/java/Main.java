@@ -116,11 +116,26 @@ public class Main {
                 Wmap.remove("");
                 System.out.println(Wmap);
                 break;
+            case 5:
+                HashMap<Integer, String> Map = new HashMap<>();
+
+                Map.put(1, "one");
+                Map.put(2, "two");
+                Map.put(3, "three");
+                Map.put(4, "four");
+
+                HashMap<String, Integer> newMap = new HashMap<>();
+
+                for (Map.Entry<Integer, String> i : Map.entrySet()) {
+                    newMap.put(i.getValue(), i.getKey());
+                }
+                System.out.println(Map);
+                System.out.println(newMap);
+                break;
             default:
                 System.out.println("Exit.");
                 break;
         }
-
 
     }
 }
