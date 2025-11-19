@@ -1,0 +1,21 @@
+<!-- templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ heading }}</h1>
+
+
+{% if show_links %}
+<div class="d-flex flex-column">
+    <a href="index">index</a>
+    <a href="promotion">promotion</a>
+    <a href="image_mars">image_mars</a>
+    <a href="astronaut_selection">astronaut_selection</a>
+    <a href="results/test/1/100.0">results</a>
+    <a href="photo/123">photo/123</a>
+    <a href="carousel">carousel</a>
+</div>
+{% endif %}
+
+
+{% endblock %}

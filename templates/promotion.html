@@ -1,0 +1,9 @@
+<!-- templates/promotion.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Реклама</h1>
+    {% for line in advertisement %}
+        <p>{{ line }}</p>
+    {% endfor %}
+{% endblock %}

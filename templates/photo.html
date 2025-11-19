@@ -1,0 +1,29 @@
+<!-- templates/photo.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Фото участника {{ nickname }}</h1>
+
+    {% if filepath %}
+        <h3>Ваше фото:</h3>
+        <img src="{{ url_for('static', filename=filepath) }}" class="img-fluid" alt="Фото участника">
+    {% endif %}
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning mt-3">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="photo" class="form-label">Загрузите ваше фото</label>
+            <input class="form-control" type="file" id="photo" name="photo" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+
+
+{% endblock %}

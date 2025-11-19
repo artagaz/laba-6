@@ -1,0 +1,10 @@
+<!-- templates/results.html -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Результаты отбора</h1>
+    <h3>Кандидат: {{ nickname }}</h3>
+    <p>Этап отбора: {{ level }}</p>
+    <p>Рейтинг: {{ "%.2f"|format(rating) }}</p>
+    <h4>Поздравляем!</h4>
+{% endblock %}
