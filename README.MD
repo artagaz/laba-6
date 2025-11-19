@@ -14,3 +14,6 @@
 <br>
 <img src="images/photo.png" alt="films_main">
 <br>
+
+<img src="images/car1.png" alt="films_main">
+<img src="images/car2.png" alt="films_main">
